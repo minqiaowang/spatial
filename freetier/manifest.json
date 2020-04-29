@@ -1,14 +1,14 @@
 {
     "tutorials": [
         {           
-            "title": "In-Memory Introduction",
-            "description": "About the In-Memory Workshop",
+            "title": "Spatial Introduction",
+            "description": "About the Spatial Workshop",
             "partnumber": "Ennnnn_01",
-            "publisheddate": "2/24/2020",
+            "publisheddate": "4/30/2020",
             "contentid": "12nnnn",
             "filename": "../intro/intro.md"
-          },
-          {         
+        },
+        {         
             "title": "Lab 1: Register for FreeTier",
             "description": "Login to Oracle Cloud",
             "partnumber": "Ennnnn_01",
@@ -29,23 +29,18 @@
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
             "publisheddate": "3/24/2020",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
-        }
-    ,{            
-        "title": "Lab 4: Enabling In-Memory",
-        "description": "Queries on In-Memory Column Store",
-        "publisheddate": "3/24/2020",
-        "filename": "../setup-inmem/setup-inmem.md"
-    },
-    {            
+        },
+        {            
+            "title": "Lab 4: Install Sample Schemas for Spatial",
+            "description": "Install Sample Schemas for Spatial",
+            "publisheddate": "4/30/2020",
+            "filename": "../install-sample-schemas/install-sample-schemas.md"
+        },
+        {            
             "title": "Lab 5: Querying the In-Memory Column Store",
             "description": "Queries on In-Memory Column Store",
-            "publisheddate": "3/24/2020",
-            "filename": "../queries/queries.md"
-        },{            
-            "title": "Lab 6: Joins and Aggregation",
-            "description": "In-Memory Joins and Aggregation",
-            "publisheddate": "3/24/2020",
-            "filename": "../joins-aggregations/joins-aggregations.md"
+            "publisheddate": "4/30/2020",
+            "filename": "../spatial-queries/spatial-queries.md"
         }
     ]
 }

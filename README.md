@@ -1,16 +1,17 @@
-# Oracle Database In-Memory Github
+# Oracle Database Spatial Github
 
+Oracle Spatial and Graph offers the industry’s most comprehensive, advanced database for enterprise spatial applications and high performance, secure graph databases. With Oracle Database 19c, in the cloud and on premises, Spatial and Graph powers applications from GIS and location services to fraud detection, social networks, linked data and knowledge management.
 
-Oracle Database In-Memory (Database In-Memory) is a suite of features, first introduced in Oracle Database 12c, that greatly improves performance for real-time analytics and mixed workloads. The In-Memory Column Store (IM column store) is the key feature of Database In-Memory. The In-Memory Column Store (IM column store) stores tables and partitions in memory using a columnar format optimized for rapid scans. Oracle Database uses a sophisticated architecture to manage data in columnar and row formats simultaneously. 
+The spatial features of Spatial and Graph include both basic spatial data management and analysis and additional high-end functionality including: spatial aggregates, 3D, LiDAR, geospatial imagery, geocoding, routing, and linear referencing.
+
+Oracle Spatial and Graph is included at no extra cost with all Oracle Database cloud services and on-prem editions. Not all Spatial features are enabled on Autonomous Database as described [here ](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/experienced-database-users.html)under the section Restrictions for Database Features.
 
 ## Workshops
 Click on one of our workshops below to access the content.
 
-[![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/ssworkshop/index.html)
 
-
-- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html)
-- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/in-memory/ssworkshop/index.html)
+- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/spatial/freetier/index.html)
+- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/spatial/ssworkshop/index.html)
 
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -23,23 +24,12 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 
 
 ## Product Pages
-- [Oracle In-Memory](https://www.oracle.com/database/technologies/in-memory.html)
+- [Oracle Spatial](https://www.oracle.com/database/technologies/spatial-techinfo.html)
 - [Oracle Database 19c](https://www.oracle.com/database/)
 
 ## Documentation
-- [Introduction to the Oracle Database In-Mamory](https://docs.oracle.com/en/database/oracle/oracle-database/19/inmem/intro-to-in-memory-column-store.html#GUID-BFA53515-7643-41E5-A296-654AB4A9F9E7)
-- [In-memory Column Store Architecture](https://docs.oracle.com/en/database/oracle/oracle-database/19/inmem/in-memory-column-store-architecture.html#GUID-EEA265EE-8FBA-4457-8C3F-315B9EEA2224)
-
-## Videos
-- [Oracle Database In-Memory YouTube Channel](https://www.youtube.com/channel/UCSYHgTG68nrHa5aTGfFH4pA)
-- [Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
-- [Real Time Analytics with Oracle Database In-Memory](https://www.youtube.com/watch?v=eToO3PRIs8k)
-- [Managing Oracle Database In-Memory](https://www.youtube.com/watch?v=IZ7UMoQxtLo)
-- [Oracle Database In-Memory Demo](https://www.youtube.com/watch?v=mF-h26iKTYY)
-- [Enabling the In-Memory Column Store](https://www.youtube.com/watch?v=dZ9cnIL6KKw)
-- [Exadata In-Memory High Availability](https://www.youtube.com/watch?v=j3n5ZjUvcD0)
-- [Oracle Database 19c](https://www.youtube.com/watch?v=EVPNyL2vAVI)
-- [Upgrading to Oracle Database 19c](https://www.youtube.com/watch?v=lOzL5irmuJo)
+- [Oracle Spatial Document](https://www.oracle.com/database/technologies/spatial-doc-idx.html)
+- [Oracle Database 19c Document](https://docs.oracle.com/en/database/oracle/oracle-database/19/books.html)
 
 ### Issues?
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
