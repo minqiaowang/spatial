@@ -77,9 +77,9 @@ Then, install the **OE** schema:
 
 ```
 <copy>
-    sqlplus system/Ora_DB4U@orclpdb @./order_entry/oe_main.sql oe users temp hr Ora_DB4U /home/oracle/db-sample-schemas-19.2/order_entry/ ./log v3 localhost:1521/orclpdb
-    exit
-    </copy>
+sqlplus system/Ora_DB4U@orclpdb @./order_entry/oe_main.sql oe users temp hr Ora_DB4U /home/oracle/db-sample-schemas-19.2/order_entry/ ./log v3 localhost:1521/orclpdb
+exit
+</copy>
 ```
 
   <img src="images/image-20200429135420511.png" alt="image-20200429135420511" style="zoom:42%;" />
