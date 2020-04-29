@@ -4,7 +4,7 @@
 
 ### Objectives
 
--   Prepare the sample schema for spatial
+-   Prepare the sample schema for spatial. Starting with Oracle Database 12c Release 2, the latest version of the sample schema scripts are available on GitHub. You can refer the doucment at [https://github.com/oracle/db-sample-schemas](https://github.com/oracle/db-sample-schemas).
 
 ### Lab Prerequisites
 
@@ -26,7 +26,7 @@ This lab assumes you have completed the following labs:
     
     
 
-2.  Unzip the zip file you downloaded, and cd to the directory.
+2.  Unzip the zip file, and cd to the directory.
 
     ````
     <copy>
@@ -34,7 +34,7 @@ This lab assumes you have completed the following labs:
     cd  cd db-sample-schemas-19.2/
     </copy>
     ````
-    <img src="images/image-20200429133418845.png" alt="image-20200429133418845" style="zoom:45%;" />
+    <img src="images/image-20200429133418845.png" alt="image-20200429133418845" style="zoom:42%;" />
 
 3.  Change all embedded paths to match your working directory. The installation scripts need your current directory embedded in various locations. Use a text editor or the following Perl script to make the changes, replacing occurrences of the token `__SUB__CWD__` with your current working directory.
 
@@ -44,7 +44,7 @@ This lab assumes you have completed the following labs:
     </copy>
     ```
 
-    <img src="images/image-20200429133949928.png" alt="image-20200429133949928" style="zoom:45%;" />
+    <img src="images/image-20200429133949928.png" alt="image-20200429133949928" style="zoom:42%;" />
 
     
 ## Step 2: Install the Sample Schemas
@@ -58,7 +58,7 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-    <img src="images/image-20200429134245301.png" alt="image-20200429134245301" style="zoom:45%;" />
+    <img src="images/image-20200429134245301.png" alt="image-20200429134245301" style="zoom:42%;" />
 
 2. You can now install the whole sample schemas. In this spatial lab, we only use the **OE** schema. The **OE** schema depend on **HR** schema. So in the next steps, we will install only the **HR** and **OE** schema.
 
@@ -67,22 +67,24 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     sqlplus system/Ora_DB4U@orclpdb @./human_resources/hr_main.sql hr users temp Ora_DB4U ./log localhost:1521/orclpdb
+    
     exit
     </copy>
     ````
-     <img src="images/image-20200429135059926.png" alt="image-20200429135059926" style="zoom:45%;" />
-
-    Then, install the **OE** schema.
-
+ <img src="images/image-20200429135059926.png" alt="image-20200429135059926" style="zoom:42%;" />
+    
+Then, install the **OE** schema.
+    
     ````
     <copy>
     sqlplus system/Ora_DB4U@orclpdb @./order_entry/oe_main.sql oe users temp hr Ora_DB4U /home/oracle/db-sample-schemas-19.2/order_entry/ ./log v3 localhost:1521/orclpdb
+    
     exit
-    </copy>
+</copy>
     ````
 
-     <img src="images/image-20200429135420511.png" alt="image-20200429135420511" style="zoom:45%;" /> 
-
+     <img src="images/image-20200429135420511.png" alt="image-20200429135420511" style="zoom:42%;" /> 
+    
     You may now proceed to the next lab.
 
 ## Acknowledgements

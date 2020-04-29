@@ -18,13 +18,13 @@ This lab assumes you have completed the following labs:
 
 MyCompany has several major warehouses. It needs to locate its customers who are near a given warehouse, to inform them of new advertising promotions. To locate its customers and perform location-based analysis, MyCompany must store location data for both its customers and warehouses.
 
-This tutorial uses CUSTOMERS and WAREHOUSES tables. WAREHOUSES are created from scratch. CUSTOMERS are copied from the OE schema that is available in LiveSQL.
+This tutorial uses CUSTOMERS and WAREHOUSES tables. WAREHOUSES are created from scratch. CUSTOMERS are copied from the OE schema that you installed in the previous lab.
 
 Each table stores location using Oracle's native spatial data type, ```SDO_GEOMETRY```. A location can be stored as a point in an ```SDO_GEOMETRY``` column of a table. The customer's location is associated with longitude and latitude values on the Earth's surface - for example, -63.13631, 52.485426.
 
 ## Prepare the lab environment
 
-1. Work as **oracle** user, connect to database orclpdb as **system** user.
+1. Work as **oracle** user, connect to the PDB **orclpdb** as **system** user.
 
    ```
    <copy>
@@ -32,9 +32,9 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
    </copy>
    ```
 
-   <img src="images/image-20200429141652550.png" alt="image-20200429141652550" style="zoom:45%;" /> 
+   <img src="images/image-20200429141652550.png" alt="image-20200429141652550" style="zoom:42%;" /> 
 
-2. Create a lab user and grant to servral priviledge.
+2. Create a lab user and grant to sufficient priviledge.
 
    ```
    <copy>
@@ -45,7 +45,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
    </copy>
    ```
 
-    <img src="images/image-20200429142033035.png" alt="image-20200429142033035" style="zoom:45%;" /> 
+   <img src="images/image-20200429142033036.png" alt="image-20200429142033036" style="zoom:42%;" /> 
 
 3. Connect with the lab user: 
 
@@ -55,7 +55,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
    </copy>
    ```
 
-  <img src="images/image-20200429142418160.png" alt="image-20200429142418160" style="zoom:45%;" /> 
+  <img src="images/image-20200429142418160.png" alt="image-20200429142418160" style="zoom:42%;" /> 
 
 4. Create the **CUSTOMERS** and **WAREHOUSES** tables. Notice that each has a column of type SDO_GEOMETRY to store location.
 
@@ -81,9 +81,9 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
    </copy>
    ```
 
-  <img src="images/image-20200429143413126.png" alt="image-20200429143413126" style="zoom:45%;" /> 
+  <img src="images/image-20200429143413126.png" alt="image-20200429143413126" style="zoom:42%;" /> 
 
-5. Next we add Spatial metadata for the CUSTOMERS and WAREHOUSES tables to the ```USER_SDO_GEOM_METADATA``` view. Each ```SDO_GEOMETRY``` column is registered with a row in ```USER_SDO_GEOM_METADATA```. This is normally a simple INSERT statement, and a GUI in SQL Developer. However due to the proxy user configuration of LiveSQL we must use a procedure that gets the actual database username:
+5. Next we add Spatial metadata for the CUSTOMERS and WAREHOUSES tables to the ```USER_SDO_GEOM_METADATA``` view. Each ```SDO_GEOMETRY``` column is registered with a row in ```USER_SDO_GEOM_METADATA```. This is normally a simple INSERT statement, and a GUI in SQL Developer. We must use a procedure that gets the actual database username:
 
    ```
    <copy>
@@ -101,7 +101,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
      </copy>
    ```
 
-   <img src="images/image-20200429143554809.png" alt="image-20200429143554809" style="zoom:45%;" /> 
+   <img src="images/image-20200429143554809.png" alt="image-20200429143554809" style="zoom:42%;" /> 
 
    Here is a description of the items that were entered:
    
@@ -129,7 +129,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
     </copy>
     ```
 
-    <img src="images/image-20200429144232710.png" alt="image-20200429144232710" style="zoom:45%;" /> 
+    <img src="images/image-20200429144232710.png" alt="image-20200429144232710" style="zoom:42%;" /> 
 
 2. Next WAREHOUSES manually load warehouses using the ```SDO_GEOMETRY``` constructor.
 
@@ -143,7 +143,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
     </copy>
     ```
 
-    <img src="images/image-20200429144606665.png" alt="image-20200429144606665" style="zoom:45%;" /> 
+    <img src="images/image-20200429144606665.png" alt="image-20200429144606665" style="zoom:42%;" /> 
 
     The elements of the constructor are:
     
@@ -162,7 +162,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
     </copy>
     ```
     
-    <img src="images/image-20200429144831067.png" alt="image-20200429144831067" style="zoom:45%;" /> 
+    <img src="images/image-20200429144831067.png" alt="image-20200429144831067" style="zoom:42%;" /> 
 
 ##Perform location-based queries
 1. Find the five customers closest to the warehouse whose warehouse ID is 3. 
@@ -179,11 +179,11 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
     AND sdo_nn (c.cust_geo_location, w.wh_geo_location, 'sdo_num_res=5') = 'TRUE';
     </copy>
     ````
-    <img src="images/image-20200429145236825.png" alt="image-20200429145236825" style="zoom:45%;" /> 
+    <img src="images/image-20200429145236825.png" alt="image-20200429145236825" style="zoom:42%;" /> 
 
     **Notes on Query 1**:
     
-    - The ```SDO_NN``` operator returns the ```SDO_NUM_RES``` value of the customers from the CUSTOMERS table who are closest to warehouse 3. The first argument to ```SDO_NN(c.cust_geo_location in the example above)``` is the column to search. The second argument to ```SDO_NN (w.wh_geo_location in the example above)``` is the location you want to find the neighbors nearest to. No assumptions should be made about the order of the returned results. For example, the first row returned is not guaranteed to be the customer closest to warehouse 3. If two or more customers are an equal distance from the warehouse, then either of the customers may be returned on subsequent calls to ```SDO_NN```.
+    - The ```SDO_NN``` operator returns the ```SDO_NUM_RES``` value of the customers from the CUSTOMERS table who are closest to warehouse 3. The first argument to ```SDO_NN(c.cust_geo_location in the example above)``` is the column to search. The second argument to ```SDO_NN(w.wh_geo_location in the example above)``` is the location you want to find the neighbors nearest to. No assumptions should be made about the order of the returned results. For example, the first row returned is not guaranteed to be the customer closest to warehouse 3. If two or more customers are an equal distance from the warehouse, then either of the customers may be returned on subsequent calls to ```SDO_NN```.
     - When using the ```SDO_NUM_RES``` parameter, no other constraints are used in the WHERE clause. ```SDO_NUM_RES``` takes only proximity into account. For example, if you added a criterion to the WHERE clause because you wanted the five closest female customers, and four of the five closest customers are male, the query above would return one row. This behavior is specific to the ```SDO_NUM_RES``` parameter, and its results may not be what you are looking for. You will learn how to find the five closest female customers in the discussion of query 3.
   
 2. Find the five customers closest to warehouse 3 and put the results in order of distance. 
@@ -203,7 +203,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
     ORDER BY distance_in_miles;
     </copy>
     ````
-    <img src="images/image-20200429145439445.png" alt="image-20200429145439445" style="zoom:45%;" />  
+    <img src="images/image-20200429145439445.png" alt="image-20200429145439445" style="zoom:42%;" />  
 
     **Notes on Query 2**:
     
@@ -231,7 +231,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
     </copy>
     ````
 
-    <img src="images/image-20200429145634013.png" alt="image-20200429145634013" style="zoom:45%;" /> 
+    <img src="images/image-20200429145634013.png" alt="image-20200429145634013" style="zoom:42%;" /> 
 
     **Notes on Query 3**:
     
@@ -259,7 +259,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
     </copy>
     ```
 
-    <img src="images/image-20200429150053921.png" alt="image-20200429150053921" style="zoom:45%;" /> 
+    <img src="images/image-20200429150053921.png" alt="image-20200429150053921" style="zoom:42%;" /> 
 
     **Notes on Query 4**:
     
@@ -289,7 +289,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
     </copy>
     ````
 
-    <img src="images/image-20200429150240494.png" alt="image-20200429150240494" style="zoom:45%;" /> 
+    <img src="images/image-20200429150240494.png" alt="image-20200429150240494" style="zoom:42%;" /> 
 
     **Notes on Query 5**:
     
