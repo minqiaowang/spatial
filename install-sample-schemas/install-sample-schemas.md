@@ -73,7 +73,8 @@ This lab assumes you have completed the following labs:
     ````
  <img src="images/image-20200429135059926.png" alt="image-20200429135059926" style="zoom:42%;" />
     
-Then, install the **OE** schema.
+
+    Then, install the **OE** schema.
     
     ````
     <copy>
