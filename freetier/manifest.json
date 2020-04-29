@@ -37,8 +37,8 @@
             "filename": "../install-sample-schemas/install-sample-schemas.md"
         },
         {            
-            "title": "Lab 5: Querying the In-Memory Column Store",
-            "description": "Queries on In-Memory Column Store",
+            "title": "Lab 5: Location-Based Analysis Using Spatial",
+            "description": "Location-Based Analysis Using Spatial",
             "publisheddate": "4/30/2020",
             "filename": "../spatial-queries/spatial-queries.md"
         }
