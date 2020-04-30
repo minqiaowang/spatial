@@ -9,16 +9,16 @@
             "filename": "../intro/intro.md"
         },
         {         
-            "title": "Lab 1: Register for FreeTier",
+            "title": "Lab 1: Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-ssworkshop.md"
         },
         {         
-            "title": "Lab 2: Generate SSH Key",
-            "description": "Generate SSH Key",
+            "title": "Lab 2: Generate SSH Keys",
+            "description": "Generate SSH Keys",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
@@ -28,16 +28,22 @@
             "title": "Lab 3A: Environment Setup",
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
             "publisheddate": "3/24/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-ssworkshop.md"
         },
         {            
-            "title": "Lab 3B: Install Sample Schemas for Spatial",
-            "description": "Install Sample Schemas for Spatial",
+            "title": "Lab 3B: Sample Schema Setup",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "publisheddate": "3/24/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/setup/setup.md"
+        },
+        {            
+            "title": "Lab 4: Install Sample Schema for Spatial",
+            "description": "Install Sample Schema for Spatial",
             "publisheddate": "4/30/2020",
             "filename": "../install-sample-schemas/install-sample-schemas.md"
         },
         {            
-            "title": "Lab 4: Location-Based Analysis Using Spatial",
+            "title": "Lab 5: Location-Based Analysis Using Spatial",
             "description": "Location-Based Analysis Using Spatial",
             "publisheddate": "4/30/2020",
             "filename": "../spatial-queries/spatial-queries.md"

@@ -22,9 +22,9 @@ This tutorial uses CUSTOMERS and WAREHOUSES tables. WAREHOUSES are created from 
 
 Each table stores location using Oracle's native spatial data type, ```SDO_GEOMETRY```. A location can be stored as a point in an ```SDO_GEOMETRY``` column of a table. The customer's location is associated with longitude and latitude values on the Earth's surface - for example, -63.13631, 52.485426.
 
-## Prepare the lab environment
+## Prepare the Lab Environment
 
-1. Work as **oracle** user, connect to the PDB **orclpdb** as **system** user.
+1. Work as **oracle** user, connect to the PDB **orclpdb** with **system** user.
 
    ```
    <copy>
@@ -57,7 +57,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
 
   <img src="images/image-20200429142418160.png" alt="image-20200429142418160" style="zoom:42%;" /> 
 
-4. Create the **CUSTOMERS** and **WAREHOUSES** tables. Notice that each has a column of type SDO_GEOMETRY to store location.
+4. Create the **CUSTOMERS** and **WAREHOUSES** tables. Notice that each table has a column of type SDO_GEOMETRY to store location.
 
    ```
    <copy>
@@ -83,7 +83,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
 
   <img src="images/image-20200429143413126.png" alt="image-20200429143413126" style="zoom:42%;" /> 
 
-5. Next we add Spatial metadata for the CUSTOMERS and WAREHOUSES tables to the ```USER_SDO_GEOM_METADATA``` view. Each ```SDO_GEOMETRY``` column is registered with a row in ```USER_SDO_GEOM_METADATA```. This is normally a simple INSERT statement, and a GUI in SQL Developer. We must use a procedure that gets the actual database username:
+5. Next we add Spatial metadata for the CUSTOMERS and WAREHOUSES tables to the ```USER_SDO_GEOM_METADATA``` view. Each ```SDO_GEOMETRY``` column is registered with a row in ```USER_SDO_GEOM_METADATA```. This is normally a simple INSERT statement, and a GUI in SQL Developer. We can use a procedure that gets the actual database username:
 
    ```
    <copy>
