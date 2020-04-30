@@ -31,8 +31,8 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
         },
         {            
-            "title": "Lab 3B: Install Sample Schemas for Spatial",
-            "description": "Install Sample Schemas for Spatial",
+            "title": "Lab 3B: Install Sample Schemas",
+            "description": "Install Sample Schemas",
             "publisheddate": "4/30/2020",
             "filename": "../install-sample-schemas/install-sample-schemas.md"
         },
